@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo app</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <a href="" class="logo">MakeNotes</a>
+      <nav>
+        <a href="">Dashboard</a>
+        <a class="ADD btn" href="/add">Add tasks</a>
+      </nav>
+    </header>
+    <section class="home">
+      <div class="caption">
+        <div class="title">
+          <h1>
+            Subtracting from your list of priorities is as important as adding
+            to it.
+          </h1>
+          <p>
+            To-do lists can help you get, and stay, on top of important projects
+            and piles of tasks or decisions
+          </p>
+        </div>
+      </div>
+      <a class="ADD btn" href="/add">Get sarted</a>
+    </section>
+
+    <section class="works">
+      <div class="task">
+        <table style="width:100%">
+          <tr>
+            <th class="head" colspan="2">Tasks</th>
+          </tr>
+          <% for(list of lists){ %>
+            <tr>
+              <td>
+                <div class="tasks">
+                  <h3><%= list.id + 1 %></h3>
+                  <h3><%= list.title %></h3>
+                  <p><%= list.des %></p>
+                </div>
+                <div class="btns">
+                  <a class="DEL btn" href="delete/<%= list.id %>"
+                    >Delete</a
+                  >
+                  <a class="EDIT btn" href="edit/<%=list.id%>"
+                    >Edit</a
+                  >
+                </div>
+              </td>
+            </tr>
+          <% } %>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>
